@@ -1,0 +1,20 @@
+<h1>Orders</h1>
+<div style="margin-bottom: 2em;">
+    {{#view App.BsRadioButtonPanel selectedInputElementBinding="selectedQueryStatusElement"}}
+        <label class="btn btn-default active">
+            <input type="radio" name="importtype" id="op_pending"> Pending
+        </label>
+        <label class="btn btn-default">
+            <input type="radio" name="importtype" id="op_completed"> Completed
+        </label>
+        <label class="btn btn-default">
+            <input type="radio" name="importtype" id="op_running"> Running
+        </label>
+        <label class="btn btn-default">
+            <input type="radio" name="importtype" id="op_failed"> Failed
+        </label>
+    {{/view}}
+</div>
+{{#each order in rootOrders}}
+    {{view App.OrderDetailsView orderBinding="order"}}
+{{/each}}

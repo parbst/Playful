@@ -1,0 +1,6 @@
+<p>orders template</p>
+<ul>
+	{{#each order in controller}}
+	  <li>{{#link-to 'order' order.id}}{{order.id}} {{order.status}}{{/link-to}}</li>
+	{{/each}}
+</ul>

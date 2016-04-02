@@ -1,0 +1,95 @@
+<h3>Order {{id}} <small>{{displayType}}</small></h3>
+
+<div {{bind-attr class=":alert isFailed:alert-warning isCompleted:alert-success isApproved:alert-info isPending:alert-info"}} role="alert">
+	{{displayStatus}} {{message}}
+</div>
+{{#if isFailed}}
+  <button {{action "toggleShowBacktrace"}} type="button" class="btn btn-link">Show backtrace</button>
+{{/if}}
+{{#if showBacktrace}}
+  <pre>
+	{{backtrace}}
+  </pre>
+{{/if}}
+<table class="table">
+  <thead>
+    <tr>
+      <th>Sequence</th>
+      <th>Parent order</th>
+      <th>Created at</th>
+      <th>Updated at</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">{{sequence}}</th>
+      <td>
+      	{{#if parentOrder}}
+      		{{#link-to 'order' parentOrder.id}}{{parentOrder.id}} {{parentOrder.type}}{{/link-to}}
+      	{{else}}
+      		None
+      	{{/if}}
+      </td>
+      <td>{{createdAt}}</td>
+      <td>{{updatedAt}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table">
+  <caption>Sub orders</caption>
+  {{#if subOrders.length}}
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Type</th>
+        <th>Sequence</th>
+      </tr>
+    </thead>
+    <tbody>
+  	{{#each subOrder in subOrders}}
+  	  <tr>
+  	    <th scope="row">{{subOrder.id}}</th>
+  	    <td>{{subOrder.type}}</td>
+  	    <td>{{subOrder.sequence}}</td>
+  	  </tr>
+  	{{/each}}
+    </tbody>
+  {{else}}
+    <tbody>
+      <tr>
+        <td colspan="3">None</td>
+      </tr>
+    </tbody>
+  {{/if}}
+</table>
+
+<table class="table">
+  <caption>Tasks</caption>
+  {{#if tasks.length}}
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Type</th>
+        <th>Status</th>
+        <th>Sequence</th>
+      </tr>
+    </thead>
+    <tbody>
+  	{{#each task in tasks}}
+  	  <tr>
+  	    <th scope="row">{{#link-to 'task' task.id}}{{task.id}}{{/link-to}}</th>
+  	    <td>{{task.displayType}}</td>
+  	    <td>{{task.displayStatus}}</td>
+  	    <td>{{task.sequence}}</td>
+  	  </tr>
+  	{{/each}}
+    </tbody>
+  {{else}}
+    <tbody>
+      <tr>
+        <td colspan="3">None</td>
+      </tr>
+    </tbody>
+  {{/if}}
+</table>

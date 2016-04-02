@@ -1,0 +1,13 @@
+<button type="button" class="btn btn-default btn-sm" {{action goBack target="view"}} {{bindAttr disabled="view.isFirstStep"}}>
+    <span class="glyphicon glyphicon-arrow-left"></span> Back
+</button>
+{{view.atStep}} / {{view.stepsTotal}}
+<button type="button" class="btn btn-default btn-sm" {{action stepCompleted}}>
+    {{#if view.isLastStep}}
+        Finish
+    {{else}}
+        Next
+    {{/if}}
+    <span class="glyphicon glyphicon-arrow-right"></span>
+</button>
+

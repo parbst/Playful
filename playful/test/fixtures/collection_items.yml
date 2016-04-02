@@ -1,0 +1,31 @@
+track1:
+  id:               1
+  sti_type:         Track
+  item_name:        The song title
+  artist:           The artist
+  composer:         Some dude
+  year:             1725
+  disc_number:      1
+
+track1_in_release1:
+  id:               2
+  sti_type:         Track
+  collection_id:    1
+  item_name:        track 1 title
+  item_order:       1
+  artist:           Specific track artist
+  composer:         Some dude
+  year:             2517
+  disc_number:      2
+
+episode1_in_season1:
+  id:               3
+  sti_type:         Episode
+  collection_id:    2
+  item_order:       1
+  item_name:        Episode 1 in season 1
+  item_description: Description for episode 1
+  air_date:         <%= 5.day.ago.to_s(:db) %>
+  poster_url:       http://url.to.nowhere
+  tv_series_id:     1
+  episode_number:   1

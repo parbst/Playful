@@ -1,0 +1,24 @@
+share_upload:
+ id: 1
+ name: Upload
+ description: new files!
+ path: <%= Rails.root %>/test/fixtures/data/upload
+
+share_imported:
+ id: 2
+ name: Imported
+ description: imported files
+ path: <%= Rails.root %>/test/fixtures/data/imported
+
+share_one:
+ id: 3
+ name: Test
+ description: Test
+ path: C:/torquebox/trunk/playful/tmp/test
+
+share_tmp:
+ id: 4
+ name: Tmp
+ description: Tmp
+ path: C:\Users\Troels\AppData\Local\Temp
+

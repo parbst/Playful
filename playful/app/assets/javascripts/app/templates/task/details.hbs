@@ -1,0 +1,66 @@
+<p>{{humanize view.task.type}}, id {{view.task.id}}, {{view.task.status}}</p>
+{{#if view.task.error}}
+    <div class="alert alert-warning">
+        {{view.task.error}}
+    </div>
+{{/if}}
+{{#if view.isMoveTask}}
+    <p>from
+    {{#if view.task.fromPath}}
+        {{view.task.fromPath}}
+    {{/if}}
+    {{#if view.task.baseFile}}
+        {{view.task.baseFile.path}}
+    {{/if}}
+    {{#if view.task.inputTask}}
+        task: {{view.task.inputTask.id}}
+    {{/if}}
+    </p>
+    <p>to {{view.task.toPath}}</p>
+    <p>create missing dirs {{view.task.createMissingDirs}}</p>
+    <p>overwrite existing {{view.task.overwriteExisting}}</p>
+{{/if}}
+{{#if view.isEditTagTask}}
+    <p>file
+    {{#if view.task.path}}
+        {{view.task.path}}
+    {{/if}}
+    {{#if view.task.baseFile}}
+        {{view.task.baseFile.path}}
+    {{/if}}
+    </p>
+    <p>
+        {{#each tag in view.tags}}
+            {{tag.key}}: {{tag.old}} &#8658; {{tag.new}}<br />
+        {{/each}}
+    </p>
+    {{#if view.task.coverArtFront}}
+        Cover art, front {{view.task.coverArtFront.id}}
+    {{/if}}
+{{/if}}
+{{#if view.isImportTask}}
+    <p>file
+    {{#if view.task.path}}
+        {{view.task.path}}
+    {{/if}}
+    {{#if view.task.baseFile}}
+        {{view.task.baseFile.path}}
+    {{/if}}
+    {{#if view.task.inputTask}}
+        input task {{view.task.inputTask.id}}
+    {{/if}}
+    </p>
+    <p>to share {{view.task.share.name}}</p>
+{{/if}}
+{{#if view.isDownloadTask}}
+    <p>file
+    {{#if view.task.toPath}}
+        {{view.task.toPath}}
+    {{/if}}
+    </p>
+    <p>url
+    {{#if view.task.url}}
+        {{view.task.url}}
+    {{/if}}
+    </p>
+{{/if}}

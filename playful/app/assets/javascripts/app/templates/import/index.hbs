@@ -1,0 +1,21 @@
+<h2>{{App.title}} import index</h2>
+<div>
+    <button class="btn btn-default" {{action 'importAudio'}}>Import audio</button>
+</div>
+<div class="row-fluid">
+    <div class="col-md-6">
+        {{render "hierarchy-browser" scanBrowser}}
+    </div>
+    <div class="col-md-6">
+        {{view App.ComponentHeadlineView title="Selection" loadingBinding="loading"}}
+        {{view Grid.GridView
+        columnsBinding="infoGridColumns"
+        rowsBinding="infoGridRows"
+        }}
+        <div style="height: 10px"></div>
+        {{view App.ComponentHeadlineView title="Scan result" }}
+        {{view Tree.ObjectTree
+        objectBinding="selectedScanResult"
+        }}
+    </div>
+</div>

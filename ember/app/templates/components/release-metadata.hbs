@@ -1,0 +1,29 @@
+{{#if model}}
+  <div class="row">
+    <div class="col-md-6">
+      {{data-table
+        columns=_tableColumns
+        rows=_tableEntries}}
+    </div>
+    <div class="col-md-6">
+      <div class="front-cover">
+        {{#if model.frontCoverSrc}}
+          <img {{bind-attr src="model.frontCoverSrc"}}>
+        {{/if}}
+        <button type="button" class="btn btn-link" {{action "changeCover"}}>Change cover</button>
+      </div>
+      <p>
+        {{model.releaseName}}
+        {{#if model.releaseType}}({{model.releaseType}}){{/if}}
+      </p>
+      <p>{{model.releaseDate}}</p>
+      {{#if model.tracks}}
+      	<p>{{model.tracks.length}} tracks {{#if totalDiscs}}({{totalDiscs}} discs){{/if}}</p>
+      {{/if}}
+      {{#if artist}}
+      	<p>{{artist}}</p>
+      {{/if}}
+   	  <p>{{edit-in-place value=model.genre}}</p>
+    </div>
+  </div>
+{{/if}}

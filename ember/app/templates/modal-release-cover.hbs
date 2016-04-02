@@ -1,0 +1,23 @@
+{{#modal-window title='Select cover image' ok='ok' close='removeModal' size="large"}}
+{{#if selectedImageUrl}}
+    <div class="clearfix">
+        <div style="width: 45%; float: left;">
+            <img style="width: 100%;" {{bind-attr src="selectedImageUrl"}} >
+        </div>
+        <div style="width: 45%; margin-left: 10%; float: left;">
+            <p>{{curImageHeight}} x {{curImageWidth}} pixels</p>
+        </div>
+    </div>
+{{/if}}
+<hr/>
+<p>Provide an url</p>
+{{input type="text" value=userProvidedUrl class="form-control"}}
+<a {{bind-attr href="urlToSearch"}} target="_blank">Find on the internet (opens new tab)</a>
+<p>Choose from import</p>
+{{thumbnail-grid 
+    images=model.imageFiles 
+    selected=_selectedThumbNails
+    imageSrcProperty="downloadUrl"
+    imageDescriptionProperty="filename"
+    selectable="1"}}
+{{/modal-window}}

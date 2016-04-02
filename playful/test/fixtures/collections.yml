@@ -1,0 +1,20 @@
+audio_release1:
+  id:           1,
+  name:         A custom album
+  release_type: Album
+  year:         1234
+  artist:       The specific artist
+  track_total:  3
+  genre:        boring rock
+  disc_total:   1
+  sti_type:     Release
+
+season1_in_tv_series1:
+  sti_type:       Season
+  id:             2
+  name:           Season 1 in tv series 1
+  description:    Description of season 1
+  poster_url:     http://url.to.nowhere
+  air_date:       <%= 5.day.ago.to_s(:db) %>
+  tv_series_id:   1
+  season_number:  1

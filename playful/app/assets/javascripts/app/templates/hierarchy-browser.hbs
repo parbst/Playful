@@ -1,0 +1,19 @@
+<div class="hierarchy-browser">
+    {{view App.ComponentHeadlineView title="File browser" loadingBinding="loading"}}
+    {{view Em.Select
+    contentBinding="pathParts"
+    optionValuePath="content.value"
+    optionLabelPath="content.label"
+    selectionBinding="selectedPathPart"
+    }}
+    {{view Grid.GridView
+    style="width: 100%;"
+    rowsBinding="itemList"
+    columnsBinding="itemColumns"
+    selectable="true"
+    sortable="false"
+    doubleClickedRowBinding="doubleClickedRow"
+    selectedRowsBinding="selectedFiles"
+    }}
+
+</div>

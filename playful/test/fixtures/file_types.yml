@@ -1,0 +1,35 @@
+mpeg3: 
+ id: 1
+ name: MPEG3
+ subtype: Audio
+ extension: mp3
+ ruby_class: AudioFile
+ scan_type: MPEG-1 Audio Layer 3
+ mime_type: audio/mpeg, audio/x-mpeg, audio/x-mpeg-3, audio/mpeg3
+
+jpeg:
+ id: 2
+ name: JPEG
+ subtype: Image
+ extension: jpg
+ ruby_class: ImageFile
+ scan_type: JPEG image data
+ mime_type: image/jpeg
+
+png:
+ id: 3
+ name: PNG
+ subtype: Image
+ extension: png
+ ruby_class: ImageFile
+ scan_type: PNG image
+ mime_type: image/png
+
+mpeg4:
+ id: 4
+ name: MPEG4
+ subtype: Video
+ extension: mp4
+ ruby_class: VideoFile
+ scan_type: MPEG4
+ mime_type: video/mp4

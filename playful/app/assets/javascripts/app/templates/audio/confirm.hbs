@@ -1,0 +1,16 @@
+<h2>Confirm audio import</h2>
+{{#if orderLine}}
+    {{view App.WizardStepView atStep=atStep stepsTotal=stepsTotal}}
+    <p><strong>Importing files</strong></p>
+    <ul>
+        {{#each af in orderLine.audioFiles}}
+            <li>{{af.path}}</li>
+        {{/each}}
+    </ul>
+    <p><strong>Cover art</strong></p>
+    {{view App.Thumbnails contentBinding="orderLine.coverArt" sourceKey="url"}}
+
+    <p><strong>Import share</strong>: {{orderLine.share.name}}</p>
+    <p><strong>Order creation data</strong></p>
+    <pre>{{orderCreationData}}</pre>
+{{/if}}

@@ -1,0 +1,28 @@
+track1_in_release1_to_audio_file1:
+  sti_type: AudioClip
+  collection_item_id: 2
+  base_file_id: 3
+  order: 1
+  set: 1
+  primary_track: true
+
+video3_on_movie1:
+  sti_type: VideoClip
+  movie_id: 1
+  base_file_id: 4
+  order: 1
+  set: 1
+
+video3_on_episode1:
+  sti_type: VideoClip
+  collection_item_id: 3
+  base_file_id: 4
+  order: 1
+  set: 1
+
+video1_on_episode1:
+  sti_type: VideoClip
+  collection_item_id: 3
+  base_file_id: 6
+  order: 1
+  set: 1

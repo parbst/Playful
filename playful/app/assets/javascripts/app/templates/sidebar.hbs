@@ -1,0 +1,15 @@
+<button class="btn expand-btn" {{action 'toggleExpand' target="view"}}>
+    {{#if view.expanded}}
+        «
+    {{else}}
+        »
+    {{/if}}
+</button>
+
+<div class="sidebar-top-spacer"><div class="sidebar-border-top"></div></div>
+
+<div class="menu">
+    {{view App.SideMenuItemsView itemsBinding="menuItems"}}
+</div>
+
+<div class="sidebar-bottom-spacer"><div class="sidebar-border-bottom"></div></div>

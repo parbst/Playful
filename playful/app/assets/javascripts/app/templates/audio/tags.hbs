@@ -1,0 +1,92 @@
+<h2>Tag audio files</h2>
+{{view App.WizardStepView atStep=atStep stepsTotal=stepsTotal }}
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        {{#view App.BsRadioButtonPanel selectedInputElementBinding="selectedImportTypeElement"}}
+            <label class="btn btn-default">
+                <input type="radio" name="importtype" id="op_onediscalbum"> One disc album
+            </label>
+            <label class="btn btn-default">
+                <input type="radio" name="importtype" id="op_multidiscalbum"> Multi disc album
+            </label>
+            <label class="btn btn-default">
+                <input type="radio" name="importtype" id="op_mixedtracks"> Mixed tracks
+            </label>
+        {{/view}}
+    </div>
+</div>
+
+<div>
+    {{view App.Mask hiddenBinding="maskHidden" }}
+
+    <div style="margin: 10px" class="btn-toolbar">
+        <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Sort tracks <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a {{action 'sortByAlbum'}} href="#">By album</a></li>
+                <li><a {{action 'sortByTrack'}} href="#">By track number</a></li>
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                Auto tag <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a {{action 'tagTrackNumbers'}} href="#">Track numbers</a></li>
+                <li><a {{action 'tagOneDiscAlbum'}} href="#">One disc album</a></li>
+                <li><a {{action 'cleanTracks'}} href="#">Clean</a></li>
+                <li {{bindAttr class="metadataTransferable::disabled"}}><a href="#">Transfer metadata</a></li>
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-default" data-toggle="button" {{action 'togglePanorama'}}>Retrieve metadata</button>
+        </div>
+    </div>
+
+    {{#if showValidations}}
+        <div class="alert alert-warning">
+            <ul>
+                {{#each errorText in displayCommonValidationErrors}}
+                    <li>{{errorText}}</li>
+                {{/each}}
+            </ul>
+            {{#if displaySelectedFilesValidationErrors}}
+                <b>For selection</b>
+                <ul>
+                    {{#each errorText in displaySelectedFilesValidationErrors}}
+                        <li>{{errorText}}</li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+        </div>
+    {{/if}}
+
+    {{#view App.PanoramaGrid fraction=".3" positionBinding="panoramaPosition" }}
+        <div class="row window">
+            <div class="col-md-4">
+                {{view Tag.TagEditorView audioFilesBinding="selectedRows"}}
+            </div>
+            <div class="col-md-4">
+                {{view App.ComponentHeadlineView title="Track list"}}
+
+                <button
+                        style="position:absolute;right:-10px;top:23px;line-height:25px;padding: 2px 8px;"
+                        class="btn-default btn"
+                    {{action 'transferMetadata'}}
+                    {{bind-attr disabled="transferMetadataDisabled"}}
+                        >«</button>
+
+                {{view Grid.GridView
+                columnsBinding="importTrackColumns"
+                rowsBinding="audioFiles"
+                selectedRowsBinding="selectedRows"
+                sortable="true"
+                selectable="true"
+                }}
+            </div>
+            <div class="col-md-4">
+                {{render metadata}}
+            </div>
+        </div>
+    {{/view}}
+</div>

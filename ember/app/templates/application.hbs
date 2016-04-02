@@ -1,0 +1,23 @@
+<div class="app-header">
+	<div class="container">
+		<h2 id="title">Playful</h2>
+	</div>
+</div>
+
+<div class="container app-navigation">
+	<ul class="list-inline">
+		<li>{{link-to 'Home' 'index'}}</li>
+		<li>{{link-to 'Orders' 'orders'}}</li>
+		<li>{{link-to 'UI components' 'ui'}}</li>
+		<li>{{link-to 'Import' 'import'}}</li>
+	</ul>
+</div>
+
+<div class="container">
+	<p>Player outlet</p>
+	{{outlet "playerDesktop"}}
+
+	{{outlet}}
+	{{outlet "modal"}}
+</div>
+

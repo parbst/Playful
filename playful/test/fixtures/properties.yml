@@ -1,0 +1,14 @@
+tmdb_id:
+  category: configuration
+  name: tmdb_api_key
+  value: 79520145d2addde4b635197269e8974f
+
+file_exec:
+  category: configuration
+  name: file_exec_path
+  value: C:/Program Files (x86)/GnuWin32/bin/file.exe
+
+ffmpeg_exec_path:
+  category: configuration
+  name: ffmpeg_exec_path
+  value: C:/Program Files (x86)/ffmpeg-0.5/bin/ffmpeg.exe

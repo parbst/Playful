@@ -1,0 +1,8 @@
+<h2>Select import share</h2>
+{{view App.WizardStepView atStep=atStep stepsTotal=stepsTotal }}
+<ul>
+    {{#each share in model}}
+        <li {{bindAttr class="share.selected:thin-border-active"}}
+            {{action selectShare share}}>{{share.name}} {{share.description}}</li>
+    {{/each}}
+</ul>

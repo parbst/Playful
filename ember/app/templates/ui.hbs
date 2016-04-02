@@ -1,0 +1,104 @@
+<h2>UI components</h2>
+
+<button {{action "hello"}}>hello!</button>
+
+<h3>DataTable</h3>
+<p>group indicator, select single</p>
+<p>Selectable {{input type="checkbox" checked=selectableDataTable}}</p>
+<p>Sortable {{input type="checkbox" checked=sortableDataTable}}</p>
+
+{{data-table columns=columnsTest rows=rowsTest selectable=selectableDataTable sortable=sortableDataTable selectedRows=selectedRowsTest}}
+
+<p>selected rows</p>
+<ul>
+  {{#each row in selectedRowsTest}}
+    <li>{{row.name}}</li>
+  {{/each}}
+</ul>
+
+<h3>Popover</h3>
+{{#popover-base tagName="button" popoverTitle="The title of the popover"}}
+    <ul>
+      <li>my</li>
+      <li>awesome</li>
+      <li>popover</li>
+      <li>contents</li>
+      <li>example</li>
+    </ul>
+{{/popover-base}}
+
+{{#popover-icon}}
+	<h3>Something special!</h3>
+	<p>Some text in a box that repeats itself for awhile and then againg and again.</p>
+	{{icon-bootstrap icon="stats"}}
+	<p>You like bootstrap icons?.</p>
+{{/popover-icon}}
+
+<h3>Two column edit</h3>
+{{two-column-edit properties=twoColumnDataProperty 
+				  readOnlyProperties=twoColumnDataPropertyReadonly 
+				  model=twoColumnDataModel
+				  title="Two column edit title"}}
+
+<h3>Data tree</h3>
+
+<p>Tree with perfect data</p>
+{{data-tree model=treeData displayProperty="label"}}
+
+<p>Tree from plain object</p>
+{{data-tree plainModel=treeData2}}
+
+<h3>Audio tag edit</h3>
+
+<h3>File list navigator</h3>
+{{scan-browser root="/upload"}}
+
+<h3>Typeahead</h3>
+<p>backend search, manual selection (filtered by other field), Delete on X (visual), Can work like select (dropdown on focus)</p>
+
+<p>Query: {{typeaheadQuery}}</p>
+<p>Selected: {{typeaheadSelected}}</p>
+
+{{twitter-typeahead 
+	content=typeaheadContent
+	query=typeaheadQuery
+	selected=typeaheadSelected
+	displayProperty="name"
+	valueToken="name"
+}}
+
+<h3>Modal dialog</h3>
+
+<h3>Upload async</h3>
+<p>move to components (with own controller)</p>
+
+<h3>Image thumbnails</h3>
+<p>Selectable {{input type="checkbox" checked=selectableThumbnailGrid}}</p>
+<p>Select multiple {{input type="checkbox" checked=selectMultipleThumbnailGrid}}</p>
+<p>Number of selected images: {{thumbnailGridSelected.length}}</p>
+{{thumbnail-grid 
+	images=thumbnailGridImages 
+	selected=thumbnailGridSelected 
+	selectable=selectableThumbnailGrid 
+	selectMultiple=selectMultipleThumbnailGrid}}
+
+<h3>Search results</h3>
+<p>Album, Track</p>
+
+<h3>Player</h3>
+<p>desktop</p>
+
+
+<pre>
+
+
+
+
+
+MOAR SPACE!
+
+
+
+
+
+</pre>

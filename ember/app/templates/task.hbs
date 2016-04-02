@@ -1,0 +1,15 @@
+<h3>Task {{id}} <small>{{displayType}}</small></h3>
+
+<div {{bind-attr class=":alert isFailed:alert-warning isCompleted:alert-success isApproved:alert-info isPending:alert-info"}} role="alert">
+	{{displayStatus}} {{error}}
+</div>
+
+<table class="table">
+	<tr><td>Sequence</td><td>{{sequence}}</td></tr>
+	<tr><td>Created t</td><td>{{displayCreatedAt}}</td></tr>
+	<tr><td>Updated at</td><td>{{displayUpdatedAt}}</td></tr>
+	<tr><td>Message</td><td>{{message}}</td></tr>
+	<tr><td>Backtrace</td><td>{{backtrace}}</td></tr>
+	<tr><td>Overwrite model values</td><td>{{overwrite_model_values}}</td></tr>
+	<tr><td>Order</td><td>{{#link-to 'order' order.id}}{{order.id}}{{/link-to}}</td></tr>
+</table>

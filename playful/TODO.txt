@@ -1,0 +1,57 @@
+- reset controller variables so more it forgets the last orderline when a new one is started
+
+---------------------------------------------- Finish the server side --------------------------------------------------
+
+- controllers
+  - files
+    - scan
+    - search
+    - by id
+  - orders
+    - all
+    - details
+  - shares
+  - metadata
+
+
+- make serializers
+
+- add params order type to movie and tv series orders (validation)
+
+- make REST interface
+
+----------------------------------------------- Front end and other ----------------------------------------------------
+
+# Order interface
+  make it possible to rerun an order from the interface. fix a failed order somehow and rerun it.
+
+# Audio covers
+   make thumbnails look prettier (center caption and force text shortening)
+
+- change metadata controller into a component
+
+- Sunspot search
+
+- make a possibility for detailed (pop over) information by hovering over the thumbnails view
+
+- Play section
+  - player
+  - playlist management
+  - media search
+
+- ACL system
+
+- Types of shares (music, video)
+- Share management
+  CRUD and access
+
+- some scheme or structured way of deciding the physical layout of files
+
+# Audio tagging
+  default actions (or states) that audio files should become (like expecting to remove comments)
+
+# Import
+  make a clean up step where the fate of leftover files are determined
+  make it possible to delete files/folders from the import initiating view
+  change autocompletion from jquery ui to bootstrap autocompletion
+  make a step where import determines, if the files imported are already there (and what to do next)

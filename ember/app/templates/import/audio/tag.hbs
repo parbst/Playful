@@ -1,0 +1,51 @@
+<h1>Tag audio</h1>
+<div class="text-center" style="margin: 1em;">
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default" {{action "matchToRelease"}}>Match to release</button>
+      <button type="button" class="btn btn-default" {{action "placeInEmptyRelease"}}>Manual release</button>
+      <button type="button" class="btn btn-default" {{action "editSelectedImportTableEntryTags"}}>Edit tags</button>
+      <button type="button" class="btn btn-default" {{action "guessRelease"}}>Guess</button>
+    </div>
+    <div class="pull-right">
+      <button type="button" class="btn btn-default" {{action "nextStep"}}>Done with tagging</button>
+    </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+  	{{data-table 
+  		columns=_importTableColumns 
+  		rows=importTableEntries 
+  		selectable="1" 
+  		sortable="1" 
+      showToggleSelectButton="1"
+  		selectedRows=selectedImportTableEntries}}
+  </div>
+  <div class="col-md-6">
+  	{{release-metadata-search artistmatch="metadataArtistMatch" releaseSelected=selectedMetadataRelease artistSelected=selectedMetadataArtist }}
+    {{release-metadata model=selectedMetadataRelease}}
+  </div>
+</div>
+<h2>Matches</h2>
+{{#each releaseMatch in releaseMatches}}
+	<div class="row">
+    <div class="text-center" style="margin: 1em;">
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default" {{action "cancelMatch" releaseMatch}}>Cancel match</button>
+          <button type="button" class="btn btn-default" {{action "editSelectedReleaseMatchTags" releaseMatch}}>Edit tags</button>
+        </div>
+    </div>
+	  <div class="col-md-4">
+	  	{{data-table 
+	  		columns=_releaseTableColumns 
+	  		rows=releaseMatch.tableEntries 
+	  		selectable="1" 
+	  		sortable="1" 
+	  		selectedRows=releaseMatch.selectedEntries
+        allSelected=allImportTableEntriesSelected
+      }}
+	  </div>
+	  <div class="col-md-8">
+        {{release-metadata model=releaseMatch.releaseMetadata changeCover="changeCover"}}
+	  </div>
+	</div>
+{{/each}}

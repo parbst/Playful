@@ -1,0 +1,57 @@
+<div>
+    <b>{{view.order.displayType}}</b>, id {{view.order.id}}, seq {{view.order.sequence}}
+    <div class="btn-group">
+        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" {{bindAttr disabled="view.actionsDisabled"}}>
+            {{view.order.displayStatus}} <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            {{#if view.order.readyForApproval}}
+                <li><a href="#" {{action approveOrder order}}>Approve</a></li>
+            {{/if}}
+        </ul>
+    </div>
+    <button {{action reload order}} title="Reload" type="button" class="btn btn-default btn-xs">
+        <span class="glyphicon glyphicon-repeat"></span>
+    </button>
+    {{#if view.order.isRootOrder}}
+        <button {{action deleteOrder order}} title="Delete" type="button" class="btn btn-default btn-xs">
+            <span class="glyphicon glyphicon-remove"></span>
+        </button>
+    {{/if}}
+</div>
+
+{{#if view.order.message}}
+    <div {{bind-attr class=":alert order.failed:alert-warning:alert-info"}}>
+        {{view.order.message}}
+    </div>
+{{/if}}
+
+{{#if view.order.backtrace}}
+    <p><a href="#" {{action toggleBacktrace target=view}}>Backtrace</a></p>
+    {{#if view.showBacktrace}}
+            <div class="well"><pre>{{view.order.backtrace}}</pre></div>
+    {{/if}}
+{{/if}}
+
+<p><a href="#" {{action toggleSubOrdersExpanded target=view}}>Sub orders</a> ({{view.order.subOrders.length}})</p>
+{{#if view.isSubOrdersExpanded}}
+    <div style="margin-left: 1em;">
+        {{#each subOrder in view.order.subOrders}}
+            {{view App.OrderDetailsView orderBinding="subOrder"}}
+        {{/each}}
+    </div>
+{{/if}}
+<p><a href="#" {{action toggleTasksExpanded target=view}}>tasks</a> ({{view.order.tasks.length}})</p>
+{{#if view.isTasksExpanded}}
+    <ul>
+    {{#each task in view.order.tasks}}
+        <li>
+        {{view App.TaskDetailsView taskBinding="task"}}
+        </li>
+    {{/each}}
+    </ul>
+{{/if}}
+
+
+
+

@@ -1,0 +1,6 @@
+tv_series1:
+ id: 1
+ name: The tv series
+ original_name: Tvserien
+ description: Description of a tv series
+ poster_url: http://url.to.nowhere

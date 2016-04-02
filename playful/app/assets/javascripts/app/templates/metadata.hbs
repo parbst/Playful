@@ -1,0 +1,27 @@
+<div class="metadata">
+    {{view App.ComponentHeadlineView title="Metadata" loadingBinding="loading"}}
+    {{! the artist autocomplete field }}
+    {{view JQ.AutoComplete
+    sourceBinding="artistSource"
+    queryBinding="artistQuery"
+    selectedBinding="selectedArtistJq"
+    placeholder="Search for artist"
+    autoShowSuggestionsBinding="showArtistSuggestions"
+    delay="2000"}}
+    {{! the release autocomplete field }}
+    {{view JQ.AutoComplete
+    sourceBinding="releaseSource"
+    queryBinding="releaseQuery"
+    selectedBinding="selectedReleaseJq"
+    placeholder="Search for release"
+    minLength="0"
+    autoShowSuggestionsBinding="showReleaseSuggestions"
+    delay="2000"}}
+    {{! track listing }}
+    {{view Grid.GridView
+    style="width: 100%;"
+    displayHeader="false"
+    rowsBinding="tracks"
+    columnsBinding="trackColumns"
+    }}
+</div>

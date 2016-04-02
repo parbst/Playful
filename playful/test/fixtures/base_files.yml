@@ -1,0 +1,183 @@
+audio_file1:
+ id: 1
+ sti_type: BaseFile::AudioFile
+ file_type_id: 1
+ path: <%= Rails.root %>/test/fixtures/data/imported/audio_file1.mp3
+ uid: 1000
+ gid: 1000
+ inode: 410948
+ links: 1
+ byte_size: 0
+ block_size: 4096
+ blocks: 0
+ access_time: 2011-08-04 23:04:06.782166 +02:00
+ change_time: 2011-08-04 23:04:06.782166 +02:00
+ modification_time: 2011-08-04 23:04:06.782166 +02:00
+ album: got that milk yeah!
+ album_art:
+ album_artist:
+ artist: rock rocker
+ bit_rate: 321
+ bit_rate_type: cbr
+ channel_mode: mono
+ composer: Burt
+ created_at: 2011-08-04T20:48:17Z
+ duration: 1.234
+ genre: happy jazz
+ sample_rate: 1
+ track_number: 42
+ track_total: 60
+ track_title: koko went a banjo thursday
+ updated_at: 2011-08-04T20:48:17Z
+ year: 1999
+ share_id: 2
+ disc_number: 1
+ disc_total: 1
+
+video_file2:
+ id: 2
+ sti_type: BaseFile::VideoFile
+ file_type_id: 4
+ path: <%= Rails.root %>/test/fixtures/data/imported/video_file2.mp4
+ uid: 1000
+ gid: 1000
+ inode: 410948
+ links: 1
+ byte_size: 123
+ block_size: 4096
+ blocks: 0
+ access_time: 2011-08-04 23:04:06.782166 +02:00
+ change_time: 2011-08-04 23:04:06.782166 +02:00
+ modification_time: 2011-08-04 23:04:06.782166 +02:00
+ audio_channel: stereo
+ audio_codec: audio codec
+ audio_sample_rate: 1234
+ audio_sample_units: Hz
+ height: 123
+ width: 321
+ bit_rate: 123
+ bit_rate_units: Mb/s
+ container_format: avi
+ duration: 123.4
+ frames_per_second: 24
+ video_codec: mpeg4
+ video_colorspace: yuv420p
+ share_id: 2
+
+audio_file2:
+ id: 3
+ sti_type: BaseFile::AudioFile
+ file_type_id: 1
+ path: <%= Rails.root %>/test/fixtures/data/imported/audio_file2.mp3
+ uid: 1000
+ gid: 1000
+ inode: 410948
+ links: 1
+ byte_size: 0
+ block_size: 4096
+ blocks: 0
+ access_time: 2011-08-04 23:04:06.782166 +02:00
+ change_time: 2011-08-04 23:04:06.782166 +02:00
+ modification_time: 2011-08-04 23:04:06.782166 +02:00
+ album: audio file 3 album
+ album_art:
+ album_artist: audio file 3 album artist
+ artist: audio file 3 artist
+ bit_rate: 321
+ bit_rate_type: cbr
+ channel_mode: mono
+ composer: audio file 3 composer
+ created_at: 2011-08-04T20:48:17Z
+ duration: 1.234
+ genre: audio file 3 genre
+ sample_rate: 1
+ track_number: 42
+ track_total: 60
+ track_title: audio file 3 track title
+ updated_at: 2011-08-04T20:48:17Z
+ year: audio file 3 year
+ share_id: 2
+ disc_number: 1
+ disc_total: 1
+
+video_file3:
+ id: 4
+ sti_type: BaseFile::VideoFile
+ file_type_id: 4
+ path: <%= Rails.root %>/test/fixtures/data/imported/video_file3.mp4
+ uid: 1000
+ gid: 1000
+ inode: 410948
+ links: 1
+ byte_size: 123
+ block_size: 4096
+ blocks: 0
+ access_time: 2011-08-04 23:04:06.782166 +02:00
+ change_time: 2011-08-04 23:04:06.782166 +02:00
+ modification_time: 2011-08-04 23:04:06.782166 +02:00
+ audio_channel: stereo
+ audio_codec: audio codec
+ audio_sample_rate: 1234
+ audio_sample_units: Hz
+ height: 123
+ width: 321
+ bit_rate: 123
+ bit_rate_units: Mb/s
+ container_format: avi
+ duration: 123.4
+ frames_per_second: 24
+ video_codec: mpeg4
+ video_colorspace: yuv420p
+ share_id: 2
+
+image_file1:
+ id: 5
+ sti_type: BaseFile::VideoFile
+ file_type_id: 2
+ path: <%= Rails.root %>/test/fixtures/data/imported/image_file3.jpg
+ access_time: 2011-08-04 23:04:06.782166 +02:00
+ change_time: 2011-08-04 23:04:06.782166 +02:00
+ modification_time: 2011-08-04 23:04:06.782166 +02:00
+ uid: 1000
+ gid: 1000
+ inode: 410948
+ links: 1
+ byte_size: 123
+ block_size: 4096
+ blocks: 0
+ captured_at: 'somewhere'
+ exif_comment: 'comment for image'
+ camera_make: 'nikkonsonyphillips'
+ camera_model: 'Super model'
+ title: 'Image title'
+ share_id: 2
+
+video_file1:
+ id: 6
+ sti_type: BaseFile::VideoFile
+ file_type_id: 4
+ path: <%= Rails.root %>/test/fixtures/data/imported/video_file1.mp4
+ uid: 1000
+ gid: 1000
+ inode: 410948
+ links: 1
+ byte_size: 123
+ block_size: 4096
+ blocks: 0
+ access_time: 2011-08-04 23:04:06.782166 +02:00
+ change_time: 2011-08-04 23:04:06.782166 +02:00
+ modification_time: 2011-08-04 23:04:06.782166 +02:00
+ audio_channel: stereo
+ audio_codec: audio codec
+ audio_sample_rate: 1234
+ audio_sample_units: Hz
+ height: 123
+ width: 321
+ bit_rate: 123
+ bit_rate_units: Mb/s
+ container_format: avi
+ duration: 123.4
+ frames_per_second: 24
+ video_codec: mpeg4
+ video_colorspace: yuv420p
+ share_id: 2

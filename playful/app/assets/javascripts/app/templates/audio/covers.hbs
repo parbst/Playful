@@ -1,0 +1,26 @@
+<h2>Find covers</h2>
+{{view App.WizardStepView atStep=atStep stepsTotal=stepsTotal }}
+
+<h2>Imported albums</h2>
+{{view App.Thumbnails contentBinding="albumImages" selectable="true"}}
+
+{{view App.ComponentHeadlineView title="Gief url"}}
+<form class="form-inline" role="form">
+    <div class="form-group">
+        <label class="sr-only" for="imageUrl">Image url</label>
+
+{{!
+        <input class="form-control" {{bindAttr value="formImageUrl"} id="imageUrl" placeholder="Enter image url">
+}}
+        {{input class="form-control" valueBinding="formImageUrl" id="imageUrl" placeholder="Enter image url"}}
+    </div>
+    <button type="submit" {{action formImageUrlSubmit }} class="btn btn-default">Use this url</button>
+</form>
+{{#if googleSearchUrl}}
+    <a {{bindAttr href="googleSearchUrl"}} target="_blank">
+        Google image search for {{imageQuery}}
+    </a>
+{{/if}}
+
+{{view App.ComponentHeadlineView title="Images included in import"}}
+{{view App.Thumbnails contentBinding="importedImageFiles" sourceKey="downloadEndpoint" captionKey="filename" titleKey="path"}}
